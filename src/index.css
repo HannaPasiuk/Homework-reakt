@@ -1,0 +1,16 @@
+:root {
+padding: 50px;
+background-color: rgb(232, 232, 232);
+
+}
+
+button {
+  border: 1px solid transparent;
+  padding: 7px;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #ffffff;
+}
