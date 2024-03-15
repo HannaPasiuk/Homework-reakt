@@ -25,9 +25,16 @@ const onHandlerClick = () => {
 
 
 return( 
+
   <>
   {state.map((state) => {
     return (
+      <div>
+       
+       <div className='block-title'>
+       <h2 className='title'>Sign In</h2>
+       </div>
+
       <button className='btn-state' onClick={() => onHandlerClick()}>{
       state.isState?
       <div className='close'>
@@ -40,8 +47,8 @@ return(
           <span className='line-close line2'></span>
           </div>}
           </button>
-      
-      
+     </div> 
+     
     )
   })}
   </>  
