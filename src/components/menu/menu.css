@@ -1,16 +1,3 @@
-.block-title{
-  display: flex;
-  width: 150px;
-  height: 50px;
-  background-color: rgb(192, 193, 194);
-  font-size: 25px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 50px;
-  color: rgb(69, 69, 69);
-  
-}
-
 
 .btn-state{
   background-color: #367ecb;
