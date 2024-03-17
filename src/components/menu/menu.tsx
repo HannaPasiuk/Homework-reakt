@@ -27,7 +27,7 @@ export function Menu(){
      <>
      {state.map((state) => {
        return (
-         <button className='btn-state' onClick={() => onHandlerClick()}>{
+         <button key={state.id} className='btn-state' onClick={() => onHandlerClick()}>{
          state.isState?
          <div className='close'>
            <span className='line-open'></span>
