@@ -1,34 +1,17 @@
 import { useState } from 'react'
 import './menu.css'
 
-
-const states = [{id: 1, isState: true}]
-
 export function Menu(){
  
-  const [state, setState] = useState(states)
+  const [state, setState] = useState(true)
   const onHandlerClick = () => {
-    const newState = state.map(state => {
-     if(state.id === state.id){
-       return {
-         ...state,
-          isState: !state.isState
-       }
-     }
-     return state
-    })
-    setState(newState)
+   setState(!state)
    }
    
-   
-   
    return( 
-   
      <>
-     {state.map((state) => {
-       return (
-         <button key={state.id} className='btn-state' onClick={() => onHandlerClick()}>{
-         state.isState?
+         <button className='btn-state' onClick={() => onHandlerClick()}>{
+         state ?
          <div className='close'>
            <span className='line-open'></span>
            <span className='line-open'></span>
@@ -39,9 +22,6 @@ export function Menu(){
              <span className='line-close line2'></span>
              </div>}
              </button>
-        
-       )
-     })}
      </>  
      )
 }
