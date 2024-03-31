@@ -1,27 +1,54 @@
-import { useState } from "react"
+import { ChangeEvent, useState } from "react"
 import './form-registration.css'
 
-export function FormRegistration(){
+export function FormRegistration() {
 
-const [name, setName] = useState(0);
-const [surname, setSurname] = useState(0);
-const [email, setEmail] = useState(0);
 
-function onHandleReset() {
-  setName(0);
-  setSurname(0);
-  setEmail(0); 
-}
+  const [inputValue, setInputValue] = useState({
+    name: '',
+    email: '',
+    password: ''
+  })
 
-  return(
-   <form onSubmit={() => alert(`Welcome ${name} ${surname} :)`)} className="form-wrapper">
+  function onHandleReset() {
+    setInputValue({
+      name: '',
+      email: '',
+      password: ''
+    })
+  }
 
-    <input onChange={e => setName(e.target.value)} className="input" placeholder="Name" type="text"/>
-    <input onChange={e => setSurname(e.target.value)} className="input" placeholder="Surname" type="text" />
-    <input onChange={e => setEmail(e.target.value)} className="input" placeholder="Email" type="email"/>
+  const handleChange = (event: ChangeEvent<HTMLFormElement>) => {
+    setInputValue({
+      ...inputValue,
+      [event.target.name]: event.target.value
+    })
+  }
+ const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
+  event.preventDefault()
+  console.log(inputValue)
+ }
 
-    <button type="reset" onClick={onHandleReset} className="reset-button">Reset</button>
-    <button type="submit" className="form-button">Get started</button>  
-  </form> 
+  return (
+    <form onChange={handleChange} onSubmit={handleSubmit} className="form-wrapper">
+
+      <input name="name"
+        className="input"
+        defaultValue={inputValue.name}
+        placeholder="Enter your name"
+        type="text" />
+      <input name="email"
+        className="input"
+        defaultValue={inputValue.email}
+        placeholder="Enter your surname"
+        type="email" />
+      <input name="password"
+        className="input"
+        defaultValue={inputValue.password}
+        placeholder="Enter your password" type="password" />
+
+      <button type="reset" onClick={onHandleReset} className="reset-button">Reset</button>
+      <button type="submit" className="form-button">Get started</button>
+    </form>
   )
 }
