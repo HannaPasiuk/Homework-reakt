@@ -1,0 +1,16 @@
+:root{
+  background-color: #b7b7b7;
+}
+:root[theme='dark']{
+  background-color: #5a5959;
+
+}
+.theme-icon{
+width: 70px;
+height: 70px;
+background-color: #969a9c;
+margin-bottom: 20px;
+border-radius: 50%;
+background-image: linear-gradient( 45deg, #c6c6c6 0%, #989898 25%, #b7b7b7 50%, #ffffff 100% );
+border: 1px solid #000000;
+}

@@ -1,14 +1,23 @@
-import { ChangeEvent, useState } from "react"
+import { ChangeEvent, useEffect, useRef, useState } from "react"
 import './form-registration.css'
 
+
 export function FormRegistration() {
-
-
+  
   const [inputValue, setInputValue] = useState({
     name: '',
     email: '',
     password: ''
   })
+
+ const inputRef = useRef<HTMLInputElement>(null)
+
+ useEffect(() => {
+  if (inputRef.current) {
+    inputRef.current.focus()
+    console.log('ref', inputRef)
+  }
+ })
 
   function onHandleReset() {
     setInputValue({
@@ -28,11 +37,9 @@ export function FormRegistration() {
   event.preventDefault()
   console.log(inputValue)
  }
-
   return (
     <form onChange={handleChange} onSubmit={handleSubmit} className="form-wrapper">
-
-      <input name="name"
+      <input ref={inputRef} name="name"
         className="input"
         defaultValue={inputValue.name}
         placeholder="Enter your name"
