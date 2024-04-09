@@ -1,16 +1,30 @@
 :root{
   background-color: #b7b7b7;
+  --input-color: rgb(154, 154, 154);
+  --text-color: rgb(249, 249, 249);
+  --button-bg-color: #b7b7b7;
+  --header-bg-color: #367ecb;
+  --menu-bg-color: #367ecb;
+  --btn-start-bg-color: #367ecb;
 }
 :root[theme='dark']{
   background-color: #5a5959;
-
+  --input-bg-color: #5a5959;
+  --input-color: white;
+ --text-color: rgb(133, 133, 133);
+ --button-bg-color:  #5a5959;
+ --header-bg-color: #29598d ;
+ --menu-bg-color: #29598d;
+ --btn-start-bg-color: #29598d;
 }
 .theme-icon{
 width: 70px;
-height: 70px;
-background-color: #969a9c;
-margin-bottom: 20px;
-border-radius: 50%;
-background-image: linear-gradient( 45deg, #c6c6c6 0%, #989898 25%, #b7b7b7 50%, #ffffff 100% );
-border: 1px solid #000000;
+height: 40px;
+font-size: 16px;
+background-color:var(--button-bg-color);
+border-radius: 10px;
+border: 1px solid #ffffff;
+cursor: pointer;
+color: var(--text-color);
+transition:  ease-in-out 0.25s;
 }

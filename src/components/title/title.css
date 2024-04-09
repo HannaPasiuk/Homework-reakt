@@ -6,7 +6,6 @@
   font-size: 25px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 50px;
-  color: rgb(69, 69, 69);
-  
+  color: var(--text-color);
+  margin: 20px auto;
 }

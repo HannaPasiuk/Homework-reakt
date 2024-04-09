@@ -1,14 +1,15 @@
-import { FormRegistration, Menu, Theme, Title } from "./components"
+import { FormRegistration, Header, Title } from "./components"
 
 
 export function App(){
 return(
+  
   <>
-  <Theme/>
+  <Header/>
   <Title>Sign In</Title>
-  <Menu/>
   <FormRegistration/>
   </>
+
 )
 
 }
