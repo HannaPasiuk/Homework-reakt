@@ -1,4 +1,4 @@
-import { ChangeEvent, useEffect, useRef, useState } from "react"
+import { ChangeEvent, useRef, useState } from "react"
 import './form-registration.css'
 
 
@@ -11,13 +11,6 @@ export function FormRegistration() {
   })
 
  const inputRef = useRef<HTMLInputElement>(null)
-
- useEffect(() => {
-  if (inputRef.current) {
-    inputRef.current.focus()
-    console.log('ref', inputRef)
-  }
- })
 
   function onHandleReset() {
     setInputValue({
