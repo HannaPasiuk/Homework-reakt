@@ -1,53 +1,42 @@
-import { ChangeEvent, useRef, useState } from "react"
+import { useContext} from "react"
 import './form-registration.css'
+import { AuthContext } from "../../context/auth.context"
+import { useNavigate } from "react-router-dom"
 
 
-export function FormRegistration() {
+export const FormRegistration = () => {
+
+  const {signIn} = useContext(AuthContext)
+  const navigate = useNavigate()
   
-  const [inputValue, setInputValue] = useState({
-    name: '',
-    email: '',
-    password: ''
-  })
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
 
- const inputRef = useRef<HTMLInputElement>(null)
+    const data = new FormData(e.currentTarget)
+    const name = data.get('name') as string
+    const email = data.get('email') as string
 
-  function onHandleReset() {
-    setInputValue({
-      name: '',
-      email: '',
-      password: ''
-    })
+     if(name && email) {
+     signIn(!!name && !!email, () => navigate('/'))
+     }
+console.log(data)
   }
 
-  const handleChange = (event: ChangeEvent<HTMLFormElement>) => {
-    setInputValue({
-      ...inputValue,
-      [event.target.name]: event.target.value
-    })
-  }
- const handleSubmit = (event: ChangeEvent<HTMLFormElement>) => {
-  event.preventDefault()
-  console.log(inputValue)
- }
   return (
-    <form onChange={handleChange} onSubmit={handleSubmit} className="form-wrapper">
-      <input ref={inputRef} name="name"
+    <form onSubmit={handleLogin} className="form-wrapper">
+      <input name="name"
         className="input"
-        defaultValue={inputValue.name}
         placeholder="Enter your name"
         type="text" />
+
       <input name="email"
         className="input"
-        defaultValue={inputValue.email}
         placeholder="Enter your surname"
         type="email" />
-      <input name="password"
-        className="input"
-        defaultValue={inputValue.password}
-        placeholder="Enter your password" type="password" />
 
-      <button type="reset" onClick={onHandleReset} className="reset-button">Reset</button>
+
+
+
       <button type="submit" className="form-button">Get started</button>
     </form>
   )

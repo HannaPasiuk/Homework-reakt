@@ -3,7 +3,17 @@
   margin-bottom: 50px;
   background-color: var(--header-bg-color);
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 10px;
+}
+.active{
+  color: rgb(7, 21, 216);
+}
+.nav-wrapper{
+ margin-left: 50px;
+ width: 100%;
+}
+.navigation{
+  display: flex;
+  gap: 40px;
 }

@@ -20,12 +20,7 @@ margin: 0 auto;
   height: 45px;
   background-color: var(--btn-start-bg-color); 
 }
-.reset-button{
-  width: 100px;
-  height: 40px;
-  background-color: darkred;
- 
-}
+
 .form-button,
 .reset-button{
   color: white;
