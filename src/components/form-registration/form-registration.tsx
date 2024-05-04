@@ -37,9 +37,6 @@ console.log(data)
         placeholder="Enter your surname"
         type="email" />
 
-
-
-
       <button type="submit" className="form-button">Get started</button>
     </form>
   )

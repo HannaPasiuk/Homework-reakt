@@ -3,7 +3,7 @@ import { Routes, Route } from "react-router-dom"
 import { Welcome } from "./pages/welcome/welcome"
 import { Layaut } from "./pages/layaut"
 import { NotFound } from "./pages/notFound/notFound"
-import { About } from "./pages/about"
+import { About } from "./components/about/about"
 import { PrivateRoute } from "./pages/privateRoute"
 
 
