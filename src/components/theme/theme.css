@@ -6,7 +6,6 @@
   --header-bg-color: #367ecb;
   --menu-bg-color: #367ecb;
   --btn-start-bg-color: #367ecb;
-  --text-color-welcome: rgb(154, 154, 154);
 }
 :root[theme='dark']{
   background-color: #5a5959;
@@ -17,7 +16,6 @@
  --header-bg-color: #29598d ;
  --menu-bg-color: #29598d;
  --btn-start-bg-color: #29598d;
- --text-color-welcome: rgb(249, 249, 249);
 }
 .theme-icon{
 width: 70px;
