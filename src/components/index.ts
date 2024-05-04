@@ -1,5 +1,5 @@
 export * from './menu'
-export * from './title'
 export * from './form-registration'
 export * from './theme'
-export * from './header'
+export * from '../pages/header'
+export * from '../pages/welcome'
